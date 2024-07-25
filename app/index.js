@@ -1,23 +1,46 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View, Pressable } from 'react-native';
+import { Link } from 'expo-router';
+import Cam from '../components/camera';
 
-export default function App() {
+export default function index() {
   return (
     <View style={styles.container}>
-      <Text>Accueil</Text>
-      <Text>Accueil</Text>
-      <Text>Accueil</Text>
-      <Text>Accueil</Text>
+      <Link href="/" asChild style={{paddingStart:20, padding:5, backgroundColor:'lightgray', width:100}}>
+        <Pressable>
+          <Text style={styles.came}>Accueil</Text>
+          <Cam />
+        </Pressable>
+      </Link>
+      <Link href="/" asChild style={{paddingStart:20, padding:5, backgroundColor:'lightgray', width:100}}>
+        <Pressable>
+          <Text>Liste</Text>
+        </Pressable>
+      </Link>
+      <Link href="/" asChild style={{paddingStart:20, padding:5, backgroundColor:'lightgray', width:100}}>
+        <Pressable>
+          <Text>Carte</Text>
+        </Pressable>
+      </Link>
+      <Link href="/" asChild style={{paddingStart:20, padding:5, backgroundColor:'lightgray', width:100}}>
+        <Pressable>
+          <Text>Photos</Text>
+        </Pressable>
+      </Link>
       <StatusBar style="auto" />
-    </View>
+    </View >
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: 'row',
+    position:'absolute',
+    top: 50
   },
-});
+  came: {
+    flexDirection: 'row',
+    width: 175
+  }
+})
